@@ -1,6 +1,26 @@
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.*;
 
-public class TestListExamples {
+public class TestListExamples implements StringChecker{
   // Write your grading tests here!
+  public boolean checkString(String s){
+    if (s.length()<5){return false;}
+    return true;
+  }
+  @Test
+  public void testList1(){
+    List<String> testingList = new ArrayList<String>();
+    testingList.add("hellooo");
+    testingList.add("123456");
+    testingList.add("1234");
+    ArrayList<String> expected = new ArrayList<>();
+    expected.add("hellooo");
+    expected.add("123456");
+    assertEquals(expected, ListExamples.filter(testingList));
+  }
 }
+
