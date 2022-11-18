@@ -18,11 +18,13 @@ fi
 cp ../TestListExamples.java ./
 
 javac ListExamples.java
-javac TestListExamples.java
 if [[ $? == 0 ]]
 then
-    javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
-    java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples
+    javac -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar *.java
+    java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > error.txt
 else 
     echo "Not Compliling!"
 fi
+
+#use grep to check how many failures in error.txt and set up a int final grade to
+#keep track of the final grade.

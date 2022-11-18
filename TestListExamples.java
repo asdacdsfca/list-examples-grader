@@ -13,6 +13,7 @@ public class TestListExamples implements StringChecker{
   }
   @Test
   public void testList1(){
+    StringChecker check1 = new TestListExamples();
     List<String> testingList = new ArrayList<String>();
     testingList.add("hellooo");
     testingList.add("123456");
@@ -20,7 +21,7 @@ public class TestListExamples implements StringChecker{
     ArrayList<String> expected = new ArrayList<>();
     expected.add("hellooo");
     expected.add("123456");
-    assertEquals(expected, ListExamples.filter(testingList));
+    assertEquals(expected, ListExamples.filter(testingList, check1));
   }
 }
 
