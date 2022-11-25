@@ -11,7 +11,7 @@ public class TestListExamples implements StringChecker{
     if (s.length()<5){return false;}
     return true;
   }
-  @Test
+  @Test(timeout = 50)
   public void testList1(){
     StringChecker check1 = new TestListExamples();
     List<String> testingList = new ArrayList<String>();
@@ -22,6 +22,14 @@ public class TestListExamples implements StringChecker{
     expected.add("hellooo");
     expected.add("123456");
     assertEquals(expected, ListExamples.filter(testingList, check1));
+  }
+  @Test(timeout = 50)
+  public void testMerge(){
+    List<String> input1 = new ArrayList<String>();;
+    List<String> input2 = new ArrayList<String>();;
+    List<String> output = ListExamples.merge(input1, input2);
+    List<String> expected = new ArrayList<String>();;
+    assertEquals(expected, output);
   }
 }
 
